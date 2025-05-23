@@ -72,6 +72,70 @@ django-admin startproject headphoneadmin
 cd headphoneadmin
 ```
 
+### Apply Migrations
+
+```bash
+# Create migrations
+python manage.py makemigrations
+
+# Apply migrations
+python manage.py migrate
+```
+
+### Viewing Migration Status
+### To see which migrations have been applied:
+```bash
+bashpython manage.py showmigrations
+```
+This will show you all migrations, including the built-in ones, with a checkmark (✓) next to those that have been applied.
+
+
+
+### Create a Django Superuser
+
+# Step 1: Make sure your Django server is stopped
+Press Ctrl + C if the server is running
+
+# Step 2: Create a superuser account
+```bash
+# Create admin user
+python manage.py createsuperuser
+```
+
+# Step 3: Follow the prompts
+You'll be asked to enter:
+
+Username: Choose any username (e.g., admin, shahinur, etc.)
+Email address: Enter your email (can be left blank)
+Password: Enter a secure password
+Password confirmation: Confirm your password
+
+Example interaction:
+Username (leave blank to use 'shahinurrahman'): admin
+Email address: your_email@example.com
+Password: ********
+Password (again): ********
+Superuser created successfully.
+
+# Step 4: Start the server again
+```bash
+python manage.py runserver
+```
+
+# Step 5: Access admin panel
+Go to: http://127.0.0.1:8000/admin/
+Use the username and password you just created.
+Alternative: If you already have a superuser
+If you already created a superuser but forgot the credentials:
+Reset existing superuser password:
+```bash
+python manage.py changepassword your_username
+```
+Or create another superuser:
+```bash
+python manage.py createsuperuser
+```
+
 ### Creating a Django App
 
 ```bash
@@ -151,29 +215,7 @@ class HeadphoneAdmin(admin.ModelAdmin):
     search_fields = ('name', 'model', 'description')
 ```
 
-### Apply Migrations
 
-```bash
-# Create migrations
-python manage.py makemigrations
-
-# Apply migrations
-python manage.py migrate
-```
-
-### Viewing Migration Status
-### To see which migrations have been applied:
-```bash
-bashpython manage.py showmigrations
-```
-This will show you all migrations, including the built-in ones, with a checkmark (✓) next to those that have been applied.
-
-### Create Superuser
-
-```bash
-# Create admin user
-python manage.py createsuperuser
-```
 
 ### Run the Development Server
 
