@@ -93,16 +93,16 @@ This will show you all migrations, including the built-in ones, with a checkmark
 
 ### Create a Django Superuser
 
-# Step 1: Make sure your Django server is stopped
+#### Step 1: Make sure your Django server is stopped
 Press Ctrl + C if the server is running
 
-# Step 2: Create a superuser account
+#### Step 2: Create a superuser account
 ```bash
 # Create admin user
 python manage.py createsuperuser
 ```
 
-# Step 3: Follow the prompts
+#### Step 3: Follow the prompts
 You'll be asked to enter:
 
 Username: Choose any username (e.g., admin, shahinur, etc.)
@@ -117,12 +117,12 @@ Password: ********
 Password (again): ********
 Superuser created successfully.
 
-# Step 4: Start the server again
+#### Step 4: Start the server again
 ```bash
 python manage.py runserver
 ```
 
-# Step 5: Access admin panel
+#### Step 5: Access admin panel
 Go to: http://127.0.0.1:8000/admin/
 Use the username and password you just created.
 Alternative: If you already have a superuser
@@ -214,7 +214,15 @@ class HeadphoneAdmin(admin.ModelAdmin):
     list_filter = ('category', 'created_at')
     search_fields = ('name', 'model', 'description')
 ```
+### Apply Migrations
 
+```bash
+# Create migrations
+python manage.py makemigrations
+
+# Apply migrations
+python manage.py migrate
+```
 
 
 ### Run the Development Server
@@ -236,19 +244,6 @@ pip install Pillow
 pip freeze > requirements.txt
 ```
 
-## 🔧 Advanced Usage
-
-### Project Directory Association
-
-Associate a project directory with a virtual environment:
-
-```bash
-# Create environment and associate with project directory
-mkvirtualenv --python=python3.10 myproject -a /path/to/your/project
-
-# Or set project directory for existing environment
-setvirtualenvproject myenv /path/to/your/project
-```
 
 ### Environment Variables
 
