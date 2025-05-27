@@ -1,0 +1,12 @@
+
+# ================ Start Django Core Package ==================#
+
+Django>=5.2.1
+python-decouple==3.8
+djangorestframework==3.14.0
+
+
+# ===============End Django Core Package =====================
+
+requests==2.31.0
+Pillow==10.0.0
