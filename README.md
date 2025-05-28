@@ -293,4 +293,15 @@ Also remove the configuration lines from your shell configuration file.
 
 ---
 
-*Last Updated: May 21, 2025*
+
+
+
+## Environments Setup for package managements
+
+We have created an Environments folted withe three base.txt, dev.txt and prod.txt where we can manage our custom package.
+
+```bash
+# Install packages for dev file
+pip install -r requirments/dev.txt
+
+```
